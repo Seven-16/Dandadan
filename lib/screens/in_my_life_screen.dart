@@ -14,7 +14,7 @@ class _InMyLifeScreenState extends State<InMyLifeScreen> {
     super.initState();
 
     // ID del video de YouTube (es la parte final de la URL del video)
-    const videoId = 'S3R2VBYAqnY'; // Reemplaza con el ID de tu video de YouTube
+    const videoId = 'gdIYXJq26fs'; // Reemplaza con el ID de tu video de YouTube
 
     // Inicializa el controlador de YouTube
     _controller = YoutubePlayerController(
@@ -30,8 +30,11 @@ class _InMyLifeScreenState extends State<InMyLifeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('En mi vida'),
+        title: Text('En mi vida', style: TextStyle(color: Colors.white)), // Título en blanco
+        backgroundColor: Colors.black, // Fondo negro en el AppBar
+        iconTheme: IconThemeData(color: Colors.white), // Flecha en blanco
       ),
+      backgroundColor: Colors.black, // Fondo negro en el cuerpo
       body: Center(
         child: YoutubePlayer(
           controller: _controller,

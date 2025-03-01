@@ -7,13 +7,13 @@ List<Moment> moments = [
     description: 'Aqui Okarun se transforma por primera vez y usa los poderes de la turbo abuela',
   ),
   Moment(
-    title: 'Momento 2',
-    imageUrl: 'https://via.placeholder.com/150',
-    description: 'Descripción del Momento 2',
+    title: 'Okarun vs Jiji',
+    imageUrl: 'assets/images/okarun2.jpg',
+    description: 'Aqui los enamorados se matan por tener el amor de Momo, jajaj que palomo.',
   ),
   Moment(
-    title: 'Momento 3',
-    imageUrl: 'https://via.placeholder.com/150',
+    title: 'Maxima Velocidad Okarun',
+    imageUrl: 'assets/images/okarun3.jpg',
     description: 'Descripción del Momento 3',
   ),
 ];

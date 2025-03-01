@@ -29,6 +29,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   video_player: ^2.9.3
   youtube_player_flutter: ^9.1.1
+  flutter_inappwebview: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -57,6 +58,8 @@ flutter:
     - assets/images/airashiratori.jpg
     - assets/images/jiji.jpg
     - assets/images/autor.jpg
+    - assets/images/okarun2.jpg
+    - assets/images/okarun3.jpg
     - assets/fonts/
 
   fonts:

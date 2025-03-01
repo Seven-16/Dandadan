@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(title: Text('Portada')),
       drawer: Drawer(
+        backgroundColor: Colors.black,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -31,52 +32,86 @@ class _HomeScreenState extends State<HomeScreen> {
                 'Menú',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'PlaywriteITModerna',
-                  decoration: TextDecoration.underline,
-                  decorationColor: Colors.white,
+                  fontSize: 32,
+                  fontFamily: 'PlaywriteITModerna-Light',
+
                 ),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Portada'),
+              leading: Icon(Icons.home, color: Colors.white), // Icono blanco
+              title: Text(
+                'Portada',
+                style: TextStyle(
+                  color: Colors.white, // Texto blanco
+                  fontFamily: 'PlaywriteITModerna', // Fuente importada
+                ),
+              ),
               onTap: () => Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => HomeScreen()),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.people),
-              title: Text('Personajes'),
+              leading: Icon(Icons.people, color: Colors.white), // Icono blanco
+              title: Text(
+                'Personajes',
+                style: TextStyle(
+                  color: Colors.white, // Texto blanco
+                  fontFamily: 'PlaywriteITModerna', // Fuente importada
+                ),
+              ),
               onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (context) => CharactersScreen()),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.photo_library),
-              title: Text('Momentos'),
+              leading: Icon(Icons.photo_library, color: Colors.white), // Icono blanco
+              title: Text(
+                'Momentos',
+                style: TextStyle(
+                  color: Colors.white, // Texto blanco
+                  fontFamily: 'PlaywriteITModerna', // Fuente importada
+                ),
+              ),
               onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (context) => MomentsScreen()),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.info),
-              title: Text('Acerca de'),
+              leading: Icon(Icons.info, color: Colors.white), // Icono blanco
+              title: Text(
+                'Acerca del Autor',
+                style: TextStyle(
+                  color: Colors.white, // Texto blanco
+                  fontFamily: 'PlaywriteITModerna', // Fuente importada
+                ),
+              ),
               onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (context) => AboutScreen()),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.video_library),
-              title: Text('En mi vida'),
+              leading: Icon(Icons.video_library, color: Colors.white), // Icono blanco
+              title: Text(
+                'En mi vida',
+                style: TextStyle(
+                  color: Colors.white, // Texto blanco
+                  fontFamily: 'PlaywriteITModerna', // Fuente importada
+                ),
+              ),
               onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (context) => InMyLifeScreen()),
               ),
             ),
             ListTile(
-              leading: Icon(Icons.contact_page),
-              title: Text('Contrátame'),
+              leading: Icon(Icons.contact_page, color: Colors.white), // Icono blanco
+              title: Text(
+                'Contrátame',
+                style: TextStyle(
+                  color: Colors.white, // Texto blanco
+                  fontFamily: 'PlaywriteITModerna', // Fuente importada
+                ),
+              ),
               onTap: () => Navigator.push(
                 context, MaterialPageRoute(builder: (context) => HireMeScreen()),
               ),

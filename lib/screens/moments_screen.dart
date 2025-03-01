@@ -7,23 +7,43 @@ class MomentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Momentos'),
+        title: Text('Momentos', style: TextStyle(color: Colors.white)), // Título en blanco
+        backgroundColor: Colors.black, // Fondo negro en el AppBar
+        iconTheme: IconThemeData(color: Colors.white), // Flechita blanca
       ),
+      backgroundColor: Colors.black, // Fondo negro en el cuerpo
       body: ListView.builder(
         itemCount: moments.length,
         itemBuilder: (context, index) {
           final moment = moments[index];
-          return ListTile(
-            leading: Image.asset(moment.imageUrl),
-            title: Text(moment.title),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MomentDetailScreen(moment: moment),
+          return Card(
+            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+            color: Colors.red.withOpacity(0.7), // Fondo rojo translúcido
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12), // Bordes redondeados
+            ),
+            child: ListTile(
+              leading: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(moment.imageUrl, width: 50, height: 50, fit: BoxFit.cover), // Imagen del momento
+              ),
+              title: Text(
+                moment.title,
+                style: TextStyle(
+                  color: Colors.white, // Texto blanco
+                  fontFamily: 'PlaywriteITModerna', // Fuente importada
+                  fontSize: 18,
                 ),
-              );
-            },
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MomentDetailScreen(moment: moment),
+                  ),
+                );
+              },
+            ),
           );
         },
       ),
@@ -40,21 +60,34 @@ class MomentDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(moment.title),
+        title: Text(moment.title, style: TextStyle(color: Colors.white)), // Título en blanco
+        backgroundColor: Colors.black, // Fondo negro en el AppBar
+        iconTheme: IconThemeData(color: Colors.white), // Flechita blanca
       ),
+      backgroundColor: Colors.black, // Fondo negro en el cuerpo
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(moment.imageUrl),
             SizedBox(height: 20),
-            Text(moment.description),
+            Text(
+              moment.description,
+              style: TextStyle(
+                color: Colors.white, // Texto blanco
+                fontSize: 16,
+                fontFamily: 'PlaywriteITModerna', // Fuente importada
+              ),
+            ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Aquí puedes abrir un video relacionado
               },
-              child: Text('Ver Video'),
+              child: Text('Ver Video', style: TextStyle(color: Colors.black)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red, // Fondo rojo
+              ),
             ),
           ],
         ),
