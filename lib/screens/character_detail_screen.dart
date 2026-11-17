@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import '../widgets/project_video_mobile.dart' if (dart.library.js_interop) '../widgets/project_video_web.dart';
 import '../models/character.dart';
 
 class CharacterDetailScreen extends StatefulWidget {
@@ -12,28 +12,6 @@ class CharacterDetailScreen extends StatefulWidget {
 }
 
 class _CharacterDetailScreenState extends State<CharacterDetailScreen> {
-  late YoutubePlayerController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    // Reemplaza el path del video local con el ID del video de YouTube
-    String youtubeVideoId = getYoutubeVideoId(widget.character.youtubeVideoUrl); // Función para obtener el ID
-
-    _controller = YoutubePlayerController(
-      initialVideoId: youtubeVideoId,
-      flags: YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
-  }
-
-  String getYoutubeVideoId(String url) {
-    // Usar el paquete youtube_player_flutter para obtener el ID de YouTube
-    return YoutubePlayer.convertUrlToId(url)!;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,15 +64,7 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> {
                     ),
                   ),
                   // Video de YouTube
-                  YoutubePlayer(
-                    controller: _controller,
-                    showVideoProgressIndicator: true,
-                    progressIndicatorColor: Colors.amber,
-                    progressColors: ProgressBarColors(
-                      playedColor: Colors.amber,
-                      handleColor: Colors.amberAccent,
-                    ),
-                  ),
+                  ProjectVideo(videoId: Uri.parse(widget.character.youtubeVideoUrl).queryParameters['v'] ?? ''),
                 ],
               ),
             ),
@@ -102,11 +72,5 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
   }
 }
